@@ -13,5 +13,9 @@ describe('Date', () => {
     expect(date.day).toEqual(1);
   });
 
-
+  test('it should check if the year is a leap year' , () => {
+    let dateInLeapYear = new Date (2000, 1, 1);
+    expect(dateInLeapYear.checkLeapYear()).toEqual(true);
+    expect(date.checkLeapYear()).toEqual(false);
+  })
 });
