@@ -5,6 +5,7 @@ export class Date{
     this.month = month;
     this.day = day;
     this.daysAway = 0;
+    this.dayOfTheWeek = "";
   }
 
   checkLeapYear() {
@@ -43,5 +44,24 @@ export class Date{
     } else if (this.month === 12) {
       this.daysAway = this.day + 334;
     } return this.daysAway;
+  }
+
+  findDayOfWeek() {
+    const daysRemainder = this.daysAway % 7;
+    if (daysRemainder === 1) {
+      this.dayOfTheWeek = "monday";
+    } else if (daysRemainder === 2) {
+      this.dayOfTheWeek = "tuesday";
+    } else if (daysRemainder === 3) {
+      this.dayOfTheWeek = "wednesday";
+    } else if (daysRemainder === 4) {
+      this.dayOfTheWeek = "thursday";
+    } else if (daysRemainder === 5) {
+      this.dayOfTheWeek = "friday";
+    } else if (daysRemainder === 6) {
+      this.dayOfTheWeek = "saturday";
+    } else if (daysRemainder === 7) {
+      this.dayOfTheWeek = "sunday";
+    } return this.dayOfTheWeek;
   }
 }

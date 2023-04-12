@@ -25,17 +25,17 @@ describe('Date', () => {
 
   test('it should check how many days away the user inputted date is from january 1st 2001', () => {
     let targetDate1 = new Date (2001, 1, 31); //january date
-    let targetDate2 = new Date (2001, 2, 28); //january date
-    let targetDate3 = new Date (2001, 3, 31); //january date
-    let targetDate4 = new Date (2001, 4, 30); //january date
-    let targetDate5 = new Date (2001, 5, 31); //january date
-    let targetDate6 = new Date (2001, 6, 30); //january date
-    let targetDate7 = new Date (2001, 7, 31); //january date
-    let targetDate8 = new Date (2001, 8, 31); //january date
-    let targetDate9 = new Date (2001, 9, 30); //january date
-    let targetDate10 = new Date (2001, 10, 31); //january date
-    let targetDate11 = new Date (2001, 11, 30); //january date
-    let targetDate12 = new Date (2001, 12, 31); //january date
+    let targetDate2 = new Date (2001, 2, 28); //february date
+    let targetDate3 = new Date (2001, 3, 31); //march date
+    let targetDate4 = new Date (2001, 4, 30); //april date
+    let targetDate5 = new Date (2001, 5, 31); //may date
+    let targetDate6 = new Date (2001, 6, 30); //june date
+    let targetDate7 = new Date (2001, 7, 31); //july date
+    let targetDate8 = new Date (2001, 8, 31); //august date
+    let targetDate9 = new Date (2001, 9, 30); //september date
+    let targetDate10 = new Date (2001, 10, 31); //october date
+    let targetDate11 = new Date (2001, 11, 30); //november date
+    let targetDate12 = new Date (2001, 12, 31); //december date
     expect(targetDate1.convertDateToDays()).toEqual(31);
     expect(targetDate2.convertDateToDays()).toEqual(59);
     expect(targetDate3.convertDateToDays()).toEqual(90);
@@ -48,5 +48,12 @@ describe('Date', () => {
     expect(targetDate10.convertDateToDays()).toEqual(304);
     expect(targetDate11.convertDateToDays()).toEqual(334);
     expect(targetDate12.convertDateToDays()).toEqual(365);
+  })
+
+  test('it should find day of the week based on a date from the first day of the year in 2001', () => {
+    let birthday = new Date(2001, 8, 23);
+    birthday.convertDateToDays();
+    birthday.findDayOfWeek();
+    expect(birthday.dayOfTheWeek).toEqual("thursday");
   })
 });
