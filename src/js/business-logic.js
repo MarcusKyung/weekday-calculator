@@ -6,6 +6,9 @@ export class Date{
     this.day = day;
     this.daysAway = 0;
     this.dayOfTheWeek = "";
+    this.yearStart = "";
+    this.leapYearsSince
+    this.YearsSince
   }
 
   checkLeapYear() {
@@ -41,7 +44,7 @@ export class Date{
       this.daysAway = this.day + 273; 
     } else if (this.month === 11) {
       this.daysAway = this.day + 304; 
-    } else if (this.month === 12) {
+    } else {
       this.daysAway = this.day + 334;
     } return this.daysAway;
   }
@@ -60,8 +63,12 @@ export class Date{
       this.dayOfTheWeek = "friday";
     } else if (daysRemainder === 6) {
       this.dayOfTheWeek = "saturday";
-    } else if (daysRemainder === 7) {
+    } else {
       this.dayOfTheWeek = "sunday";
     } return this.dayOfTheWeek;
+  }
+
+  yearsSince() {
+    
   }
 }
